@@ -1,6 +1,6 @@
 Summary   : Gtk application to use themonospot (multimedia files parser/editor)
 Name      : themonospot-gui-gtk
-Version   : 0.2.0
+Version   : 0.2.2
 Release   : %mkrel 1
 License   : GPLv2
 Group     : Video
@@ -10,17 +10,11 @@ URL       : http://www.integrazioneweb.com/themonospot
 
 #BuildArch : noarch
 
-BuildRequires: mono >= 1.2.3
-BuildRequires: gtk-sharp2 >= 2.8.3
-BuildRequires: glade-sharp2 >= 2.8.3
-BuildRequires: themonospot-base
-BuildRequires: pkgconfig
+BuildRequires: mono-devel
+BuildRequires: themonospot-base-devel
+BuildRequires: gtk-sharp2
+BuildRequires: glade-sharp2
 
-Requires: gtk-sharp2 >= 2.8.3
-Requires: glade-sharp2 >= 2.8.3
-Requires: glib-sharp2 >= 2.8.3
-Requires: themonospot-base
-Requires: mono >= 1.2.3
 
 
 %description
@@ -36,7 +30,6 @@ graphic frontend to use themonospot base component and his plugins.
 
 %install
 rm -fr %{buildroot}
-#%makeinstall_std linuxpkgconfigdir=%{_datadir}/pkgconfig
 %makeinstall_std
 
 
@@ -46,12 +39,17 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+%doc copying.gpl
 %{_bindir}/themonospot-gtk
-%{_libdir}/%{name}/
+%{_libdir}/themonospot/%{name}.exe
 %{_datadir}/pixmaps/themonospot-gtk.png
 %{_datadir}/applications/themonospot-gtk.desktop
 
 
 %changelog
+* Wed Dec 30 2009 Armando Basile <hmandevteam@gmail.com> 0.2.2-1mdv2010.1
+- removed GAC use
+- bug fix: scan process without plugin installed
+
 * Mon Dec 14 2009 Armando Basile <hmandevteam@gmail.com> 0.2.0-1mdv2010.1
 - first release of new Gtk application to use themonospot
