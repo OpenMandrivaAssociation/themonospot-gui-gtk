@@ -1,7 +1,7 @@
 Summary: Gtk application to use themonospot (multimedia files parser/editor)
 Name: themonospot-gui-gtk
 Version: 0.2.2
-Release: %mkrel 3
+Release: %mkrel 4
 License: GPLv2
 Group: Video
 Source: http://www.integrazioneweb.com/repository/SOURCES/themonospot-gui-gtk-%{version}.tar.gz
@@ -20,6 +20,7 @@ graphic frontend to use themonospot base component and his plugins.
 %prep
 %setup -q
 %patch0 -p0 -b .orig
+chmod 0644 src/resources/*
 
 %build
 %configure2_5x
