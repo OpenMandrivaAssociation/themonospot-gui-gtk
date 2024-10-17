@@ -9,7 +9,7 @@ License: GPLv2
 Group:   Video
 Source:  http://www.integrazioneweb.com/repository/SOURCES/themonospot-gui-gtk-%{version}.tar.gz
 Patch0:  themonospot-gui-gtk-0.2.2-drop-invalid-dekstop-item-patch
-Url:     http://www.integrazioneweb.com/themonospot
+Url:     https://www.integrazioneweb.com/themonospot
 BuildRequires: mono-devel
 BuildRequires: themonospot-base-devel
 BuildRequires: gtk-sharp2
